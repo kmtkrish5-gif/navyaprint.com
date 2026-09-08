@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Navya Design & Print — Admin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+    --green:#173b2d;
+    --green2:#285642;
+    --sage:#dfe8d7;
+    --cream:#f7f4e9;
+    --paper:#fffdf7;
+    --ink:#18241e;
+    --muted:#657069;
+    --line:#d7ded1;
+    --white:#fff;
+    --danger:#8b3028;
+
+    --serif:"Playfair Display",Georgia,serif;
+    --sans:"DM Sans",Arial,sans-serif;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--sans);
+}
+
+
+/* HEADER */
+
+.header{
+    height:78px;
+    padding:0 7%;
+    background:white;
+    border-bottom:1px solid var(--line);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:var(--green);
+}
+
+.brand-mark{
+    font-size:38px;
+}
+
+.brand b{
+    display:block;
+    font:600 25px var(--serif);
+    letter-spacing:.12em;
+}
+
+.brand small{
+    display:block;
+    font-size:8px;
+    letter-spacing:.22em;
+}
+
+
+/* BUTTON */
+
+.btn{
+    border:0;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-dark{
+    background:var(--green);
+    color:white;
+}
+
+.btn-dark:hover{
+    background:#0e2c21;
+}
+
+
+/* ADMIN */
+
+.admin{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 6%;
+}
+
+.eyebrow{
+    font-size:10px;
+    letter-spacing:.25em;
+    color:#6f785e;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.admin h1{
+    font:600 48px var(--serif);
+    color:var(--green);
+    margin:0 0 35px;
+}
+
+
+/* DASHBOARD */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.stat{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:25px;
+}
+
+.stat span{
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.stat strong{
+    display:block;
+    font:600 32px var(--serif);
+    color:var(--green);
+    margin-top:5px;
+}
+
+
+/* PANEL */
+
+.panel{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:25px;
+}
+
+.panel h2{
+    margin-top:0;
+    font:600 27px var(--serif);
+    color:var(--green);
+}
+
+
+/* FORM */
+
+.form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form input,
+.form textarea,
+.form select{
+    width:100%;
+    padding:13px 15px;
+
+    border:1px solid var(--line);
+    border-radius:9px;
+
+    outline:none;
+    font-family:var(--sans);
+    background:#fff;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus{
+    border-color:var(--green);
+}
+
+.form textarea{
+    grid-column:span 2;
+    min-height:100px;
+    resize:vertical;
+}
+
+.form button{
+    width:max-content;
+}
+
+
+/* PRODUCTS */
+
+.product{
+    display:grid;
+    grid-template-columns:100px 1fr auto;
+    gap:20px;
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--line);
+}
+
+.product:last-child{
+    border-bottom:0;
+}
+
+.product img{
+    width:100px;
+    height:75px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.product h3{
+    margin:0 0 4px;
+    font:600 18px var(--serif);
+    color:var(--green);
+}
+
+.product small{
+    color:var(--muted);
+}
+
+.delete{
+    border:0;
+    background:var(--danger);
+    color:white;
+    padding:9px 16px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.delete:hover{
+    opacity:.85;
+}
+
+
+/* ENQUIRIES */
+
+.enquiry{
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+}
+
+.enquiry:last-child{
+    border-bottom:0;
+}
+
+.enquiry strong{
+    color:var(--green);
+}
+
+.enquiry p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+
+/* NOTICE */
+
+.notice{
+    background:var(--sage);
+    border-radius:12px;
+    padding:18px;
+    color:var(--green);
+    font-size:13px;
+    margin-top:25px;
+}
+
+
+/* EMPTY */
+
+.empty{
+    padding:25px 0;
+    color:var(--muted);
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .header{
+        padding:0 5%;
+    }
+
+    .header .btn{
+        display:none;
+    }
+
+    .admin{
+        padding:40px 5%;
+    }
+
+    .admin h1{
+        font-size:38px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .form{
+        grid-template-columns:1fr;
+    }
+
+    .form textarea{
+        grid-column:auto;
+    }
+
+    .product{
+        grid-template-columns:75px 1fr;
+    }
+
+    .product img{
+        width:75px;
+        height:60px;
+    }
+
+    .delete{
+        grid-column:2;
+        width:max-content;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<a href="index.html" class="brand">
+
+<span class="brand-mark">
+❧
+</span>
+
+<span>
+
+<b>NAVYA</b>
+
+<small>
+DESIGN & PRINT · SIKAR
+</small>
+
+</span>
+
+</a>
+
+
+<a
+href="index.html"
+class="btn btn-dark"
+>
+← View Website
+</a>
+
+</header>
+
+
+
+<main class="admin">
+
+
+<p class="eyebrow">
+NAVYA DESIGN & PRINT
+</p>
+
+
+<h1>
+Admin Dashboard
+</h1>
+
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat">
+
+<span>
+Total Products
+</span>
+
+<strong id="productCount">
+0
+</strong>
+
+</div>
+
+
+<div class="stat">
+
+<span>
+Total Enquiries
+</span>
+
+<strong id="enquiryCount">
+0
+</strong>
+
+</div>
+
+
+<div class="stat">
+
+<span>
+Business
+</span>
+
+<strong>
+Sikar
+</strong>
+
+</div>
+
+</section>
+
+
+
+<!-- ADD PRODUCT -->
+
+<section class="panel">
+
+<h2>
+Add New Creation
+</h2>
+
+
+<form
+id="productForm"
+class="form"
+>
+
+
+<input
+id="title"
+type="text"
+placeholder="Product / Creation name"
+required
+>
+
+
+<select
+id="category"
+required
+>
+
+<option value="">
+Select Category
+</option>
+
+<option>
+Photo Frames
+</option>
+
+<option>
+Collage Gifts
+</option>
+
+<option>
+Devotional Art
+</option>
+
+<option>
+Acrylic Cutouts
+</option>
+
+<option>
+Print & Events
+</option>
+
+<option>
+Custom Gifts
+</option>
+
+<option>
+Art & Printing
+</option>
+
+</select>
+
+
+<input
+id="image"
+type="url"
+placeholder="Image URL"
+required
+>
+
+
+<textarea
+id="description"
+placeholder="Product description"
+></textarea>
+
+
+<button
+class="btn btn-dark"
+type="submit"
+>
+
++ Add Creation
+
+</button>
+
+
+</form>
+
+</section>
+
+
+
+<!-- PRODUCT LIST -->
+
+<section class="panel">
+
+<h2>
+Website Catalog
+</h2>
+
+
+<div id="products">
+
+</div>
+
+</section>
+
+
+
+<!-- ENQUIRIES -->
+
+<section class="panel">
+
+<h2>
+Customer Enquiries
+</h2>
+
+
+<div id="enquiries">
+
+</div>
+
+
+<button
+class="delete"
+id="clearEnquiries"
+>
+Clear Enquiries
+</button>
+
+</section>
+
+
+
+<div class="notice">
+
+<strong>Demo Admin Panel</strong>
+
+<br><br>
+
+This version stores products and enquiries
+in browser LocalStorage.
+
+For a real production website,
+the admin should use a secure login,
+backend API, database and protected server.
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+/* STORAGE */
+
+const PRODUCT_KEY =
+"navya_products";
+
+const ENQUIRY_KEY =
+"navya_enquiries";
+
+
+
+/* DEFAULT PRODUCTS */
+
+const defaultProducts = [
+
+[
+"Photo Frames",
+"Photo Frames",
+"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=85",
+"Customized photo frames."
+],
+
+[
+"Collage Gifts",
+"Collage Gifts",
+"https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85",
+"Personalized collage gifts."
+],
+
+[
+"Devotional Art",
+"Devotional Art",
+"https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=900&q=85",
+"Beautiful devotional artwork."
+],
+
+[
+"Acrylic Cutouts",
+"Acrylic Cutouts",
+"https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=85",
+"Custom acrylic creations."
+],
+
+[
+"Print & Events",
+"Print & Events",
+"https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85",
+"Event printing and promotional materials."
+],
+
+[
+"Custom Gifts",
+"Custom Gifts",
+"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=85",
+"Personalized gifts for special occasions."
+]
+
+];
+
+
+
+/* LOAD PRODUCTS */
+
+let products =
+JSON.parse(
+localStorage.getItem(PRODUCT_KEY)
+);
+
+
+if(!products){
+
+    products =
+    defaultProducts;
+
+    localStorage.setItem(
+        PRODUCT_KEY,
+        JSON.stringify(products)
+    );
+
+}
+
+
+
+/* LOAD ENQUIRIES */
+
+let enquiries =
+JSON.parse(
+localStorage.getItem(ENQUIRY_KEY)
+) || [];
+
+
+
+/* ELEMENTS */
+
+const productContainer =
+document.getElementById("products");
+
+const enquiryContainer =
+document.getElementById("enquiries");
+
+const productCount =
+document.getElementById("productCount");
+
+const enquiryCount =
+document.getElementById("enquiryCount");
+
+
+
+/* SAVE PRODUCTS */
+
+function saveProducts(){
+
+    localStorage.setItem(
+        PRODUCT_KEY,
+        JSON.stringify(products)
+    );
+
+}
+
+
+
+/* RENDER PRODUCTS */
+
+function renderProducts(){
+
+    productCount.textContent =
+    products.length;
+
+
+    if(products.length === 0){
+
+        productContainer.innerHTML = `
+            <div class="empty">
+                No creations added yet.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    productContainer.innerHTML =
+    products.map(
+    (product,index)=>`
+
+        <div class="product">
+
+            <img
+                src="${product[2]}"
+                alt="${product[0]}"
+            >
+
+            <div>
+
+                <h3>
+                    ${product[0]}
+                </h3>
+
+                <small>
+                    ${product[1]}
+                </small>
+
+                <br>
+
+                <small>
+                    ${product[3] || ""}
+                </small>
+
+            </div>
+
+
+            <button
+                class="delete"
+                onclick="deleteProduct(${index})"
+            >
+                Delete
+            </button>
+
+        </div>
+
+    `
+    ).join("");
+
+}
+
+
+
+/* DELETE PRODUCT */
+
+function deleteProduct(index){
+
+    const confirmed =
+    confirm(
+        "Are you sure you want to delete this creation?"
+    );
+
+
+    if(!confirmed){
+        return;
+    }
+
+
+    products.splice(index,1);
+
+    saveProducts();
+
+    renderProducts();
+
+}
+
+
+
+/* ADD PRODUCT */
+
+document
+.getElementById("productForm")
+.addEventListener(
+"submit",
+function(event){
+
+    event.preventDefault();
+
+
+    const title =
+    document
+    .getElementById("title")
+    .value
+    .trim();
+
+
+    const category =
+    document
+    .getElementById("category")
+    .value;
+
+
+    const image =
+    document
+    .getElementById("image")
+    .value
+    .trim();
+
+
+    const description =
+    document
+    .getElementById("description")
+    .value
+    .trim();
+
+
+    products.push([
+        title,
+        category,
+        image,
+        description
+    ]);
+
+
+    saveProducts();
+
+    renderProducts();
+
+
+    event.target.reset();
+
+
+    alert(
+        "Creation added successfully!"
+    );
+
+});
+
+
+
+/* RENDER ENQUIRIES */
+
+function renderEnquiries(){
+
+    enquiryCount.textContent =
+    enquiries.length;
+
+
+    if(enquiries.length === 0){
+
+        enquiryContainer.innerHTML = `
+            <div class="empty">
+                No customer enquiries yet.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    enquiryContainer.innerHTML =
+    enquiries
+    .map(
+    (item,index)=>`
+
+        <div class="enquiry">
+
+            <strong>
+                ${item.name || "Customer"}
+            </strong>
+
+            <p>
+                ${item.message || "No message"}
+            </p>
+
+            <small>
+                ${item.date || ""}
+            </small>
+
+        </div>
+
+    `
+    )
+    .join("");
+
+}
+
+
+
+/* CLEAR ENQUIRIES */
+
+document
+.getElementById("clearEnquiries")
+.addEventListener(
+"click",
+function(){
+
+    if(
+        !confirm(
+            "Clear all customer enquiries?"
+        )
+    ){
+        return;
+    }
+
+
+    enquiries = [];
+
+    localStorage.removeItem(
+        ENQUIRY_KEY
+    );
+
+    renderEnquiries();
+
+});
+
+
+
+/* INITIAL RENDER */
+
+renderProducts();
+
+renderEnquiries();
+
+
+</script>
+
+
+</body>
+
+</html>
